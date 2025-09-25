@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentonomica '25 | XIM University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1600x900/a3bfb0/ffffff?text=XIM+University+Campus');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center;
+        }
+
+        .card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300;
+        }
+
+        .btn {
+            @apply px-8 py-3 rounded-lg font-semibold text-white transition-transform duration-300;
+        }
+        
+        .btn-primary {
+            @apply bg-emerald-600 hover:bg-emerald-700 shadow-md hover:shadow-lg;
+        }
+        
+        .nav-link {
+             @apply text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-300;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body x-data="{ scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+
+    <!-- Header -->
+    <header :class="{'bg-white/80 backdrop-blur-lg shadow-md': scrolled}" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://xim.edu.in/wp-content/uploads/2022/11/XIM-University-New-logo-01-300x292.png" alt="XIM University Logo" class="h-10 md:h-12">
+                <span class="text-xl md:text-2xl font-bold text-gray-800">Presentonomica '25</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#topics" class="nav-link">Topics</a>
+                <a href="#rules" class="nav-link">Rules</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#register" class="btn btn-primary">Register Now</a>
+            </nav>
+            <button class="md:hidden text-gray-800" @click="menuOpen = !menuOpen">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight shadow-text">Presentonomica '25</h1>
+            <p class="text-lg md:text-2xl mb-8 font-light">The National Flagship Economics Event by XIM University</p>
+            <a href="#register" class="btn btn-primary text-lg">Register for the Event</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16 md:py-24 space-y-20 md:space-y-32">
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About Presentonomica</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="card">
+                    <img src="https://placehold.co/600x400/86a694/ffffff?text=Event+Highlights" alt="Event Highlights" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-emerald-700 mb-4">The Premier Economics Conclave</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            The School of Economics, XIM University, is proud to host its National Flagship Event - Presentonomica. This one-day event brings together high school, undergraduate, and postgraduate students from across the country to present innovative solutions to real-world economic challenges. It's a platform for collaboration, competition, and intellectual growth.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                     <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-lg text-gray-700">What to Expect:</h4>
+                        <ul class="mt-2 list-disc list-inside text-gray-600 space-y-2">
+                           <li>Competitions & Simulations challenging analytical reasoning.</li>
+                           <li>Expert Talks & Panel Discussions with industry leaders.</li>
+                           <li>Interactive Activities & Exhibitions.</li>
+                           <li>A platform to network with the brightest minds in economics.</li>
+                        </ul>
+                     </div>
+                     <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h4 class="font-semibold text-lg text-gray-700">Event Details:</h4>
+                        <p class="mt-2 text-gray-600"><span class="font-semibold">Date:</span> 11th October, 2025</p>
+                        <p class="text-gray-600"><span class="font-semibold">Venue:</span> School of Economics, XIM University</p>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentation Topics Section -->
+        <section id="topics" x-data="{ tab: 'high-school' }">
+            <h2 class="section-title">Presentation Topics</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center border-b-2 border-gray-200 mb-8">
+                    <button @click="tab = 'high-school'" :class="{'border-emerald-500 text-emerald-600': tab === 'high-school', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'high-school'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
+                        High School
+                    </button>
+                    <button @click="tab = 'undergraduate'" :class="{'border-emerald-500 text-emerald-600': tab === 'undergraduate', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'undergraduate'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
+                        Undergraduate
+                    </button>
+                    <button @click="tab = 'postgraduate'" :class="{'border-emerald-500 text-emerald-600': tab === 'postgraduate', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'postgraduate'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
+                        Postgraduate
+                    </button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <div x-show="tab === 'high-school'" x-cloak>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700">
+                            <li>Universal Basic Income: Analyzing the potential impact of UBI on overall economic growth.</li>
+                            <li>Liberalization, Privatization and Globalization: Then vs Now.</li>
+                            <li>Tariffs as Instruments of Economic Defense: Economic Strategy or Disguised Geopolitical Warfare?</li>
+                        </ul>
+                    </div>
+                    <div x-show="tab === 'undergraduate'" x-cloak>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700">
+                            <li>Aging Population vs Upcoming Youth: Prospects for the future of India.</li>
+                            <li>Analysis of the workings of Foreign Aid: Effectiveness and Potential Economic Distortions.</li>
+                            <li>Tech Job Outsourcing in the Context of H1-B Visa: Economic Implications in the short and long run.</li>
+                            <li>The impact of AI on Gen Z Workforce.</li>
+                        </ul>
+                    </div>
+                    <div x-show="tab === 'postgraduate'" x-cloak>
+                         <ul class="list-disc list-inside space-y-3 text-gray-700">
+                            <li>Construct a systems dynamics model of the water-energy-food nexus in Northern India.</li>
+                            <li>Analyze and criticize government sponsored social security plans with respect to free market economic theory.</li>
+                            <li>Assume an economic policy framework balancing monetary policy autonomy, exchange rate stability, and unrestricted digital monetary assets.</li>
+                            <li>Examine the role of government scholarships for higher education in modifying household spending choice.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules and Regulations Section -->
+        <section id="rules">
+            <h2 class="section-title">Rules and Regulations</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rule Cards will be generated here -->
+                <div class="card p-6">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Registration</h3>
+                    <p class="text-gray-600">All participants must register before the specified deadline. Late entries will not be entertained.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Team Composition</h3>
+                    <p class="text-gray-600">Participants can form a team of two or participate solo. Prize money is awarded to teams, not individuals.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Presentation Time</h3>
+                    <p class="text-gray-600">Each team will have 8 minutes for their presentation, followed by a 2-minute Q&A session with the judges.</p>
+                </div>
+                 <div class="card p-6">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Originality</h3>
+                    <p class="text-gray-600">Any form of plagiarism will lead to immediate disqualification. All work must be original.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Dress Code</h3>
+                    <p class="text-gray-600">Participants are required to be in business formals throughout the event.</p>
+                </div>
+                <div class="card p-6">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Identification</h3>
+                    <p class="text-gray-600">Participants must carry their institution's ID card. School students must be accompanied by a parent.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Photo Gallery -->
+        <section id="gallery">
+             <h2 class="section-title">Glimpses From The Past</h2>
+             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x700/86a694/ffffff?text=Event+Photo+1" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x500/a3bfb0/ffffff?text=Event+Photo+2" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x500/d1e0d7/ffffff?text=Event+Photo+3" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x700/86a694/ffffff?text=Event+Photo+4" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x700/a3bfb0/ffffff?text=Event+Photo+5" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x500/d1e0d7/ffffff?text=Event+Photo+6" alt="">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x500/86a694/ffffff?text=Event+Photo+7" alt="">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg shadow-md" src="https://placehold.co/500x700/a3bfb0/ffffff?text=Event+Photo+8" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Registration Section -->
+        <section id="register">
+            <h2 class="section-title">Register for Presentonomica '25</h2>
+            <div class="max-w-4xl mx-auto bg-white p-4 md:p-8 rounded-xl shadow-2xl">
+                <div class="aspect-w-1 aspect-h-1 md:aspect-w-2 md:aspect-h-3">
+                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNfpn1Lua6uE8lMa_tReeWjhBkvqklIKyhrpasbM99PgykQw/viewform?embedded=true" width="100%" height="1871" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Presentonomica '25</h3>
+                    <p class="text-gray-400">An initiative by the School of Economics, XIM University.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Arpita Sahoo (Secretary): +91 7978560027</li>
+                        <li>Barnali Senapati (Coordinator): +91 6371604651</li>
+                        <li>Email: <a href="mailto:econospeak@xim.edu.in" class="hover:text-emerald-400">econospeak@xim.edu.in</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-bold mb-4">Follow XIM University</h3>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <!-- Add Social Links Here -->
+                         <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                         <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                         <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.79-.167-2.005.035-2.868.182-.78.937-3.967.937-3.967s-.239-.479-.239-1.187c0-1.114.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.264-3.442-3.264-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 01.056.23c-.06.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.911 0-1.771-.466-2.076-.998 0 0-.447 1.707-.549 2.102-.146.577-.546 1.18-.84 1.631C9.403 21.436 10.67 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500">
+                <p>&copy; 2025 XIM University. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
