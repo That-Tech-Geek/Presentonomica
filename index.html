@@ -28,7 +28,7 @@
         }
         
         .btn-primary {
-            @apply bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white;
+            @apply bg-blue-600 hover:bg-blue-700 text-white;
         }
 
         .btn-secondary {
@@ -36,7 +36,7 @@
         }
         
         .nav-link {
-             @apply text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300;
+             @apply text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300;
         }
 
         [x-cloak] {
@@ -50,14 +50,16 @@
     <!-- Header -->
     <header :class="{'bg-white/80 backdrop-blur-lg shadow-md': scrolled}" class="fixed w-full top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3">
-                <img src="https://raw.githubusercontent.com/That-Tech-Geek/Presentonomica/main/image_2025-09-27_084825196.png" alt="Presentonomica Logo" class="h-10 md:h-12">
-                <span class="text-xl md:text-2xl font-bold text-gray-800">Presentonomica '25</span>
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://raw.githubusercontent.com/That-Tech-Geek/Presentonomica/main/image_2025-09-27_084825196.png" alt="XIM University Logo" class="h-10 md:h-12">
+                <img src="https://raw.githubusercontent.com/That-Tech-Geek/Presentonomica/main/image_2025-09-27_085857304.png" alt="Presentonomica Logo" class="h-10 md:h-12">
+                <span class="text-xl md:text-2xl font-bold text-gray-800 hidden sm:inline-block ml-2">Presentonomica '25</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#topics" class="nav-link">Topics</a>
                 <a href="#rules" class="nav-link">Rules</a>
+                <a href="#prizes" class="nav-link">Prizes</a>
                 <a href="#register" class="btn btn-primary">Register Now</a>
             </nav>
             <button class="md:hidden text-gray-800" @click="menuOpen = !menuOpen">
@@ -185,6 +187,56 @@
             </div>
         </section>
 
+        <!-- Prizes Section -->
+        <section id="prizes">
+            <h2 class="section-title">Prizes & Recognition</h2>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                 <p class="text-gray-600">Attractive cash prizes to be won across all categories. Presentation prizes are awarded to the team, while poster competition prizes are awarded on an individual basis.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- High School Prizes -->
+                <div class="card p-6 text-center">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">High School Presentation</h3>
+                    <p class="text-gray-800 font-semibold text-2xl mt-4">₹8,000</p>
+                    <p class="text-gray-500">Prize Pool</p>
+                    <ul class="mt-4 text-left space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Winner: ₹5,000</li>
+                        <li>Runner-up: ₹3,000</li>
+                    </ul>
+                </div>
+                <!-- Undergraduate Prizes -->
+                <div class="card p-6 text-center">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">UG Presentation</h3>
+                    <p class="text-gray-800 font-semibold text-2xl mt-4">₹13,000</p>
+                    <p class="text-gray-500">Prize Pool</p>
+                     <ul class="mt-4 text-left space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Winner: ₹8,000</li>
+                        <li>Runner-up: ₹5,000</li>
+                    </ul>
+                </div>
+                <!-- Postgraduate Prizes -->
+                <div class="card p-6 text-center">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">PG Presentation</h3>
+                    <p class="text-gray-800 font-semibold text-2xl mt-4">₹17,000</p>
+                    <p class="text-gray-500">Prize Pool</p>
+                     <ul class="mt-4 text-left space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Winner: ₹10,000</li>
+                        <li>Runner-up: ₹7,000</li>
+                    </ul>
+                </div>
+                <!-- Poster Prizes -->
+                <div class="card p-6 text-center">
+                    <h3 class="font-bold text-xl mb-2 text-blue-600">Poster Competition</h3>
+                    <p class="text-gray-800 font-semibold text-2xl mt-4">₹4,500</p>
+                    <p class="text-gray-500">Prize Pool</p>
+                     <ul class="mt-4 text-left space-y-2 text-gray-600 list-disc list-inside">
+                        <li>Winner: ₹3,000</li>
+                        <li>Runner-up: ₹1,500</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <!-- Registration Section -->
         <section id="register">
             <h2 class="section-title">Register for Presentonomica '25</h2>
@@ -192,10 +244,10 @@
                 <p class="text-gray-600 mb-8">Choose the appropriate registration link below to participate in the presentation competition or to submit your poster.</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScNfpn1Lua6uE8lMa_tReeWjhBkvqklIKyhrpasbM99PgykQw/viewform?usp=sharing&ouid=113694657543677526689" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-lg w-full sm:w-auto">
-                       Register for Presentation
+                       Registration for Presentation
                    </a>
                    <a href="https://forms.gle/3G9nQTiUsCH8Lg2y8" target="_blank" rel="noopener noreferrer" class="btn btn-secondary text-lg w-full sm:w-auto">
-                       Submit Your Poster
+                       Registration for Poster
                    </a>
                 </div>
             </div>
@@ -221,12 +273,12 @@
                     </ul>
                 </div>
                  <div>
-                    <h3 class="text-xl font-bold mb-4">Follow XIM University</h3>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
                     <div class="flex justify-center md:justify-start space-x-4">
-                        <!-- Add Social Links Here -->
-                         <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                         <a href="https://www.instagram.com/presentonomica_soe" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.343 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.623c-2.403 0-2.72.01-3.667.058-1.002.045-1.503.2-1.895.368-.452.198-.755.438-1.08.773-.326.335-.576.628-.773 1.08-.168.392-.323.893-.368 1.895-.048.947-.058 1.264-.058 3.667s.01 2.72.058 3.667c.045 1.002.2 1.503.368 1.895.198.452.438.755.773 1.08.335.326.628.576 1.08.773.392.168.893.323 1.895.368.947.048 1.264.058 3.667.058s2.72-.01 3.667-.058c1.002-.045 1.503-.2 1.895-.368.452-.198.755-.438 1.08-.773.326-.335.576-.628.773-1.08.168-.392.323-.893.368-1.895.048-.947.058-1.264.058-3.667s-.01-2.72-.058-3.667c-.045-1.002-.2-1.503-.368-1.895-.198-.452-.438-.755-.773-1.08-.335-.326-.628-.576-1.08-.773-.392-.168-.893-.323-1.895-.368-.947-.048-1.264-.058-3.667-.058zM12 8.118c-2.147 0-3.882 1.735-3.882 3.882s1.735 3.882 3.882 3.882 3.882-1.735 3.882-3.882-1.735-3.882-3.882-3.882zm0 6.14a2.258 2.258 0 100-4.516 2.258 2.258 0 000 4.516zm5.34-6.402a.933.933 0 100-1.866.933.933 0 000 1.866z" clip-rule="evenodd" /></svg>
+                         </a>
                          <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
-                         <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.855 6.356 9.312-.087-.79-.167-2.005.035-2.868.182-.78.937-3.967.937-3.967s-.239-.479-.239-1.187c0-1.114.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.264-3.442-3.264-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 01.056.23c-.06.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.911 0-1.771-.466-2.076-.998 0 0-.447 1.707-.549 2.102-.146.577-.546 1.18-.84 1.631C9.403 21.436 10.67 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" clip-rule="evenodd" /></svg></a>
                     </div>
                 </div>
             </div>
@@ -239,3 +291,4 @@
 </body>
 
 </html>
+
