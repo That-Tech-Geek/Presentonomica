@@ -13,12 +13,6 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8f9fa;
         }
-
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1600x900/a3bfb0/ffffff?text=XIM+University+Campus');
-            background-size: cover;
-            background-position: center;
-        }
         
         .section-title {
             @apply text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center;
@@ -29,15 +23,19 @@
         }
 
         .btn {
-            @apply px-8 py-3 rounded-lg font-semibold text-white transition-transform duration-300;
+            @apply px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
         }
         
         .btn-primary {
-            @apply bg-emerald-600 hover:bg-emerald-700 shadow-md hover:shadow-lg;
+            @apply bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white;
+        }
+
+        .btn-secondary {
+            @apply bg-gray-200 hover:bg-gray-300 text-gray-800;
         }
         
         .nav-link {
-             @apply text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-300;
+             @apply text-gray-700 hover:text-blue-500 font-medium transition-colors duration-300;
         }
 
         [x-cloak] {
@@ -52,7 +50,7 @@
     <header :class="{'bg-white/80 backdrop-blur-lg shadow-md': scrolled}" class="fixed w-full top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3">
-                <img src="https://xim.edu.in/wp-content/uploads/2022/11/XIM-University-New-logo-01-300x292.png" alt="XIM University Logo" class="h-10 md:h-12">
+                <img src="https://raw.githubusercontent.com/That-Tech-Geek/Presentonomica/main/image_2025-09-27_084825196.png" alt="Presentonomica Logo" class="h-10 md:h-12">
                 <span class="text-xl md:text-2xl font-bold text-gray-800">Presentonomica '25</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
@@ -68,10 +66,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg h-screen flex items-center justify-center text-white">
+    <section class="bg-white h-screen flex items-center justify-center text-gray-800">
         <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight shadow-text">Presentonomica '25</h1>
-            <p class="text-lg md:text-2xl mb-8 font-light">The National Flagship Economics Event by XIM University</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Presentonomica '25</h1>
+            <p class="text-lg md:text-2xl mb-8 font-light text-gray-600">The National Flagship Economics Event by XIM University</p>
             <a href="#register" class="btn btn-primary text-lg">Register for the Event</a>
         </div>
     </section>
@@ -84,9 +82,9 @@
             <h2 class="section-title">About Presentonomica</h2>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="card">
-                    <img src="https://placehold.co/600x400/86a694/ffffff?text=Event+Highlights" alt="Event Highlights" class="w-full h-64 object-cover">
+                    <img src="https://raw.githubusercontent.com/That-Tech-Geek/Presentonomica/main/image_2025-09-27_085209382.png" alt="Event Concept" class="w-full h-64 object-cover">
                     <div class="p-8">
-                        <h3 class="text-2xl font-bold text-emerald-700 mb-4">The Premier Economics Conclave</h3>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">The Premier Economics Conclave</h3>
                         <p class="text-gray-600 leading-relaxed">
                             The School of Economics, XIM University, is proud to host its National Flagship Event - Presentonomica. This one-day event brings together high school, undergraduate, and postgraduate students from across the country to present innovative solutions to real-world economic challenges. It's a platform for collaboration, competition, and intellectual growth.
                         </p>
@@ -116,13 +114,13 @@
             <h2 class="section-title">Presentation Topics</h2>
             <div class="max-w-4xl mx-auto">
                 <div class="flex justify-center border-b-2 border-gray-200 mb-8">
-                    <button @click="tab = 'high-school'" :class="{'border-emerald-500 text-emerald-600': tab === 'high-school', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'high-school'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
+                    <button @click="tab = 'high-school'" :class="{'border-blue-500 text-blue-600': tab === 'high-school', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'high-school'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
                         High School
                     </button>
-                    <button @click="tab = 'undergraduate'" :class="{'border-emerald-500 text-emerald-600': tab === 'undergraduate', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'undergraduate'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
+                    <button @click="tab = 'undergraduate'" :class="{'border-blue-500 text-blue-600': tab === 'undergraduate', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'undergraduate'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
                         Undergraduate
                     </button>
-                    <button @click="tab = 'postgraduate'" :class="{'border-emerald-500 text-emerald-600': tab === 'postgraduate', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'postgraduate'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
+                    <button @click="tab = 'postgraduate'" :class="{'border-blue-500 text-blue-600': tab === 'postgraduate', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': tab !== 'postgraduate'}" class="py-4 px-6 block font-medium border-b-4 focus:outline-none transition-colors duration-300">
                         Postgraduate
                     </button>
                 </div>
@@ -158,29 +156,28 @@
         <section id="rules">
             <h2 class="section-title">Rules and Regulations</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Rule Cards will be generated here -->
                 <div class="card p-6">
-                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Registration</h3>
+                    <h3 class="font-bold text-lg mb-2 text-blue-600">Registration</h3>
                     <p class="text-gray-600">All participants must register before the specified deadline. Late entries will not be entertained.</p>
                 </div>
                 <div class="card p-6">
-                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Team Composition</h3>
-                    <p class="text-gray-600">Participants can form a team of two or participate solo. Prize money is awarded to teams, not individuals.</p>
+                    <h3 class="font-bold text-lg mb-2 text-blue-600">Team Composition</h3>
+                    <p class="text-gray-600">Presentation participants must form a team of three. Prize money is awarded to teams, not individuals.</p>
                 </div>
                 <div class="card p-6">
-                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Presentation Time</h3>
+                    <h3 class="font-bold text-lg mb-2 text-blue-600">Presentation Time</h3>
                     <p class="text-gray-600">Each team will have 8 minutes for their presentation, followed by a 2-minute Q&A session with the judges.</p>
                 </div>
                  <div class="card p-6">
-                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Originality</h3>
+                    <h3 class="font-bold text-lg mb-2 text-blue-600">Originality</h3>
                     <p class="text-gray-600">Any form of plagiarism will lead to immediate disqualification. All work must be original.</p>
                 </div>
                 <div class="card p-6">
-                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Dress Code</h3>
+                    <h3 class="font-bold text-lg mb-2 text-blue-600">Dress Code</h3>
                     <p class="text-gray-600">Participants are required to be in business formals throughout the event.</p>
                 </div>
                 <div class="card p-6">
-                    <h3 class="font-bold text-lg mb-2 text-emerald-700">Identification</h3>
+                    <h3 class="font-bold text-lg mb-2 text-blue-600">Identification</h3>
                     <p class="text-gray-600">Participants must carry their institution's ID card on the event day.</p>
                 </div>
             </div>
@@ -189,9 +186,15 @@
         <!-- Registration Section -->
         <section id="register">
             <h2 class="section-title">Register for Presentonomica '25</h2>
-            <div class="max-w-4xl mx-auto bg-white p-4 md:p-8 rounded-xl shadow-2xl">
-                <div class="aspect-w-1 aspect-h-1 md:aspect-w-2 md:aspect-h-3">
-                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNfpn1Lua6uE8lMa_tReeWjhBkvqklIKyhrpasbM99PgykQw/viewform?embedded=true" width="100%" height="1871" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl text-center">
+                <p class="text-gray-600 mb-8">Choose the appropriate registration link below to participate in the presentation competition or to submit your poster.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                   <a href="https://docs.google.com/forms/d/e/1FAIpQLScNfpn1Lua6uE8lMa_tReeWjhBkvqklIKyhrpasbM99PgykQw/viewform?usp=sharing&ouid=113694657543677526689" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-lg w-full sm:w-auto">
+                       Register for Presentation
+                   </a>
+                   <a href="https://forms.gle/3G9nQTiUsCH8Lg2y8" target="_blank" rel="noopener noreferrer" class="btn btn-secondary text-lg w-full sm:w-auto">
+                       Submit Your Poster
+                   </a>
                 </div>
             </div>
         </section>
@@ -212,7 +215,7 @@
                         <li>Arpita Sahoo (Secretary): +91 7978560027</li>
                         <li>Barnali Senapati (Coordinator): +91 6371604651</li>
                         <li>Aprajita (Deputy Coordinator): +91 93345 40154</li>
-                        <li>Email: <a href="mailto:econospeak@xim.edu.in" class="hover:text-emerald-400">econospeak@xim.edu.in</a></li>
+                        <li>Email: <a href="mailto:econospeak@xim.edu.in" class="hover:text-blue-400">econospeak@xim.edu.in</a></li>
                     </ul>
                 </div>
                  <div>
@@ -234,5 +237,3 @@
 </body>
 
 </html>
-
-
